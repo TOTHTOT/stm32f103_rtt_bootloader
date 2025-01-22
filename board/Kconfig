@@ -8,33 +8,23 @@ menu "Onboard Peripheral Drivers"
         select BSP_USING_UART1
         default y
 
-    config BSP_USING_RGB
-        bool "Enable RGB LED (timer3 channel2 - 4)"
-        select RT_USING_PWM
-        select BSP_USING_PWM
-        select BSP_USING_PWM3
-        select BSP_USING_PWM3_CH2
-        select BSP_USING_PWM3_CH3
-        select BSP_USING_PWM3_CH4
+    config BSP_USING_EEPROM
+        bool "Enable I2C EEPROM (i2c1)"
+        select BSP_USING_I2C1
+        default n
+
+    config BSP_USING_SPI_FLASH
+        bool "Enable SPI FLASH (W25Q16 spi2)"
+    select BSP_USING_SPI
+        select BSP_USING_SPI2
+        select RT_USING_SFUD
+        select RT_SFUD_USING_SFDP
         default n
 
     config BSP_USING_POT
         bool "Enable potentiometer"
         select BSP_USING_ADC
         select BSP_USING_ADC1
-        default n
-
-    config BSP_USING_SPI_FLASH
-        bool "Enable SPI FLASH (W25Q64 spi1)"
-        select BSP_USING_SPI
-        select BSP_USING_SPI1
-        select RT_USING_SFUD
-        select RT_SFUD_USING_SFDP
-        default n
-
-    config BSP_USING_EEPROM
-        bool "Enable I2C EEPROM (i2c1)"
-        select BSP_USING_I2C1
         default n
 
 endmenu
@@ -79,6 +69,43 @@ menu "On-chip Peripheral Drivers"
                 default n
         endif
 
+    menuconfig BSP_USING_TIM
+        bool "Enable timer"
+        default n
+        select RT_USING_HWTIMER
+        if BSP_USING_TIM
+            config BSP_USING_TIM2
+                bool "Enable TIM2"
+                default n
+
+            config BSP_USING_TIM3
+                bool "Enable TIM3"
+                default n
+
+            config BSP_USING_TIM4
+                bool "Enable TIM4"
+                default n
+        endif
+
+    menuconfig BSP_USING_PWM
+        bool "Enable PWM"
+        default n
+        select RT_USING_PWM
+        if BSP_USING_PWM
+        menuconfig BSP_USING_PWM3
+            bool "Enable timer3 output PWM"
+            default n
+            if BSP_USING_PWM3
+                config BSP_USING_PWM3_CH1
+                    bool "Enable PWM3 channel1"
+                    default n
+
+                config BSP_USING_PWM3_CH2
+                    bool "Enable PWM3 channel2"
+                    default n
+            endif
+        endif
+
     menuconfig BSP_USING_SPI
         bool "Enable SPI BUS"
         default n
@@ -115,25 +142,6 @@ menu "On-chip Peripheral Drivers"
                 default n
         endif
 
-    menuconfig BSP_USING_ADC
-        bool "Enable ADC"
-        default n
-        select RT_USING_ADC
-        if BSP_USING_ADC
-            config BSP_USING_ADC1
-                bool "Enable ADC1"
-                default n
-
-            config BSP_USING_ADC2
-                bool "Enable ADC2"
-                default n
-
-            config BSP_USING_ADC3
-                bool "Enable ADC3"
-                default n
-
-        endif
-
     menuconfig BSP_USING_I2C1
         bool "Enable I2C1 BUS (software simulation)"
         default n
@@ -143,62 +151,48 @@ menu "On-chip Peripheral Drivers"
         if BSP_USING_I2C1
             config BSP_I2C1_SCL_PIN
                 int "i2c1 scl pin number"
-                range 0 175
+                range 0 63
                 default 22
             config BSP_I2C1_SDA_PIN
                 int "I2C1 sda pin number"
-                range 0 175
+                range 0 63
                 default 23
         endif
 
-    menuconfig BSP_USING_TIM
-        bool "Enable timer"
+    menuconfig BSP_USING_ADC
+        bool "Enable ADC"
         default n
-        select RT_USING_HWTIMER
-        if BSP_USING_TIM
-            config BSP_USING_TIM2
-                bool "Enable TIM2"
-                default n
-
-            config BSP_USING_TIM3
-                bool "Enable TIM3"
-                default n
-
-            config BSP_USING_TIM4
-                bool "Enable TIM4"
-                default n
-
-            config BSP_USING_TIM5
-                bool "Enable TIM5"
+        select RT_USING_ADC
+        if BSP_USING_ADC
+            config BSP_USING_ADC1
+                bool "Enable ADC1"
                 default n
         endif
 
-    menuconfig BSP_USING_PWM
-        bool "Enable PWM"
+    config BSP_USING_ON_CHIP_FLASH
+        bool "Enable on-chip FLASH"
         default n
-        select RT_USING_PWM
-        if BSP_USING_PWM
-        menuconfig BSP_USING_PWM3
-            bool "Enable timer3 output PWM"
-            default n
-            if BSP_USING_PWM3
-                config BSP_USING_PWM3_CH2
-                    bool "Enable PWM3 channel2"
-                    default n
 
-                config BSP_USING_PWM3_CH3
-                    bool "Enable PWM3 channel3"
-                    default n
+    menuconfig BSP_USING_ONCHIP_RTC
+        bool "Enable RTC"
+        select RT_USING_RTC
+        default n
+        if BSP_USING_ONCHIP_RTC
+            choice
+                prompt "Select clock source"
+                default BSP_RTC_USING_LSE
 
-                config BSP_USING_PWM3_CH4
-                    bool "Enable PWM3 channel4"
-                    default n
-            endif
+                config BSP_RTC_USING_LSE
+                    bool "RTC USING LSE"
+
+                config BSP_RTC_USING_LSI
+                    bool "RTC USING LSI"
+            endchoice
         endif
 
-    config BSP_USING_CAN
-        bool "Enable CAN"
-        select RT_USING_CAN
+    config BSP_USING_WDT
+        bool "Enable Watchdog Timer"
+        select RT_USING_WDT
         default n
 
     source "$BSP_DIR/../libraries/HAL_Drivers/drivers/Kconfig"

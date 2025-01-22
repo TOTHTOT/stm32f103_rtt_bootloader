@@ -4,7 +4,7 @@
 /* Automatically generated file; DO NOT EDIT. */
 /* RT-Thread Configuration */
 
-#define SOC_STM32F103ZE
+#define SOC_STM32F103RC
 
 /* RT-Thread Kernel */
 
@@ -270,6 +270,7 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_UART1
+#define BSP_USING_ON_CHIP_FLASH
 
 /* Board extended module Drivers */
 
