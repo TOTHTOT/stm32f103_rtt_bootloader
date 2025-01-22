@@ -14,30 +14,16 @@
 #define RT_THREAD_PRIORITY_32
 #define RT_THREAD_PRIORITY_MAX 32
 #define RT_TICK_PER_SECOND 1000
-#define RT_USING_OVERFLOW_CHECK
-#define RT_USING_HOOK
-#define RT_HOOK_USING_FUNC_PTR
-#define RT_USING_IDLE_HOOK
-#define RT_IDLE_HOOK_LIST_SIZE 4
 #define IDLE_THREAD_STACK_SIZE 256
-#define RT_USING_TIMER_SOFT
-#define RT_TIMER_THREAD_PRIO 4
-#define RT_TIMER_THREAD_STACK_SIZE 512
 
 /* kservice optimization */
 
 #define RT_KSERVICE_USING_STDLIB
-#define RT_USING_DEBUG
-#define RT_DEBUGING_COLOR
-#define RT_DEBUGING_CONTEXT
 
 /* Inter-Thread communication */
 
 #define RT_USING_SEMAPHORE
 #define RT_USING_MUTEX
-#define RT_USING_EVENT
-#define RT_USING_MAILBOX
-#define RT_USING_MESSAGEQUEUE
 
 /* Memory Management */
 
@@ -63,20 +49,6 @@
 #define RT_USING_USER_MAIN
 #define RT_MAIN_THREAD_STACK_SIZE 2048
 #define RT_MAIN_THREAD_PRIORITY 10
-#define RT_USING_MSH
-#define RT_USING_FINSH
-#define FINSH_USING_MSH
-#define FINSH_THREAD_NAME "tshell"
-#define FINSH_THREAD_PRIORITY 20
-#define FINSH_THREAD_STACK_SIZE 4096
-#define FINSH_USING_HISTORY
-#define FINSH_HISTORY_LINES 5
-#define FINSH_USING_SYMTAB
-#define FINSH_CMD_SIZE 80
-#define MSH_USING_BUILT_IN_COMMANDS
-#define FINSH_USING_DESCRIPTION
-#define FINSH_ARG_MAX 10
-#define FINSH_USING_OPTION_COMPLETION
 
 /* DFS: device virtual file system */
 
@@ -190,6 +162,17 @@
 
 /* Micrium: Micrium software products porting for RT-Thread */
 
+#define PKG_USING_QBOOT
+#define QBOOT_APP_PART_NAME "app"
+#define QBOOT_DOWNLOAD_PART_NAME "download"
+#define QBOOT_FACTORY_PART_NAME "factory"
+#define QBOOT_USING_QUICKLZ
+#define QBOOT_USING_STATUS_LED
+#define QBOOT_STATUS_LED_PIN 8
+#define QBOOT_STATUS_LED_LEVEL 0
+#define QBOOT_THREAD_STACK_SIZE 4096
+#define QBOOT_THREAD_PRIO 5
+#define PKG_USING_QBOOT_LATEST_VERSION
 
 /* peripheral libraries and drivers */
 
@@ -209,6 +192,13 @@
 
 /* touch drivers */
 
+#define PKG_USING_QLED
+#define QLED_TOTAL 5
+#define QLED_TIME_UNIT_MS 10
+#define QLED_THREAD_NAME "qled"
+#define QLED_THREAD_STACK_SIZE 512
+#define QLED_THREAD_PRIO 3
+#define PKG_USING_QLED_LATEST_VERSION
 
 /* AI packages */
 
@@ -225,6 +215,23 @@
 
 /* entertainment: terminal games and other interesting software packages */
 
+#define PKG_USING_QUICKLZ
+#define QLZ_COMPRESSION_LEVEL 3
+#define PKG_USING_QUICKLZ_V101
+#define PKG_USING_CRCLIB
+#define CRCLIB_USING_CRC8
+#define CRC8_USING_CONST_TABLE
+#define CRC8_POLY_8C
+#define CRC8_POLY 140
+#define CRCLIB_USING_CRC16
+#define CRC16_USING_CONST_TABLE
+#define CRC16_POLY_A001
+#define CRC16_POLY 40961
+#define CRCLIB_USING_CRC32
+#define CRC32_USING_CONST_TABLE
+#define CRC32_POLY_EDB88320
+#define CRC32_POLY 3988292384
+#define PKG_USING_CRCLIB_V102
 
 /* Arduino libraries */
 

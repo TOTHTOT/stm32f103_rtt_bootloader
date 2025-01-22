@@ -15,6 +15,7 @@
 #include <board.h>
 
 extern const struct fal_flash_dev stm32_onchip_flash;
+#define RT_APP_PART_ADDR            (0x08000000 + 45 * 1024)  // app partition begin address
 
 /* flash device table */
 #define FAL_FLASH_DEV_TABLE                                          \
@@ -25,10 +26,11 @@ extern const struct fal_flash_dev stm32_onchip_flash;
 #ifdef FAL_PART_HAS_TABLE_CFG
 
 /* partition table */
-#define FAL_PART_TABLE                                                            \
-    {                                                                             \
-        {FAL_PART_MAGIC_WROD, "loader", "onchip_flash", 0, 80 * 1024, 0},         \
-        {FAL_PART_MAGIC_WROD, "param", "onchip_flash", 200 * 1024, 16 * 1024, 0}, \
-    }
+#define FAL_PART_TABLE                                                                \
+    {                                                                                 \
+        {FAL_PART_MAGIC_WORD, "app", "onchip_flash", 45 * 1024, 150 * 1024, 0},       \
+        {FAL_PART_MAGIC_WORD, "factory", "onchip_flash", 195 * 1024, 1 * 1024, 0},  \
+        {FAL_PART_MAGIC_WORD, "download", "onchip_flash", 196 * 1024, 59 * 1024, 0}, \
+    } 
 #endif /* FAL_PART_HAS_TABLE_CFG */
 #endif /* _FAL_CFG_H_ */

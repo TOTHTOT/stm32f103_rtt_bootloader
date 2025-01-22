@@ -336,7 +336,7 @@
               <MiscControls />
               <Define>__STDC_LIMIT_MACROS, RT_USING_ARMLIBC, STM32F103xE, USE_HAL_DRIVER, RT_USING_LIBC, __CLK_TCK=RT_TICK_PER_SECOND, __RTTHREAD__</Define>
               <Undefine />
-              <IncludePath>..\..\..\components\libc\compilers\common\extension;..\libraries\HAL_Drivers\drivers;..\..\..\libcpu\arm\cortex-m3;..\libraries\HAL_Drivers\drivers\config;..\..\..\components\libc\compilers\common\include;..\..\..\components\libc\posix\io\eventfd;..\..\..\components\fal\inc;..\..\..\libcpu\arm\common;..\..\..\components\drivers\include;board;..\libraries\STM32F1xx_HAL\CMSIS\Device\ST\STM32F1xx\Include;..\libraries\HAL_Drivers\CMSIS\Include;.;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\libc\posix\ipc;..\..\..\components\libc\posix\io\poll;..\libraries\HAL_Drivers;board\ports;..\..\..\components\libc\compilers\common\extension\fcntl\octal;board\CubeMX_Config\Inc;..\libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Inc;..\..\..\components\libc\posix\io\epoll;applications;..\..\..\components\finsh;..\..\..\components\drivers\include;..\..\..\include;..\libraries\HAL_Drivers\drivers\drv_flash</IncludePath>
+              <IncludePath>..\..\..\components\libc\compilers\common\extension;packages\crclib-v1.02\inc;..\libraries\HAL_Drivers\drivers;..\..\..\libcpu\arm\cortex-m3;..\libraries\HAL_Drivers\drivers\config;..\..\..\components\libc\compilers\common\include;packages\quicklz-v1.0.1;..\..\..\components\libc\posix\io\eventfd;..\..\..\components\fal\inc;..\..\..\libcpu\arm\common;..\..\..\components\drivers\include;board;..\libraries\STM32F1xx_HAL\CMSIS\Device\ST\STM32F1xx\Include;packages\qboot-latest\inc;..\libraries\HAL_Drivers\CMSIS\Include;.;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\libc\posix\ipc;..\..\..\components\libc\posix\io\poll;..\libraries\HAL_Drivers;board\ports;..\..\..\components\libc\compilers\common\extension\fcntl\octal;board\CubeMX_Config\Inc;..\libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Inc;..\..\..\components\libc\posix\io\epoll;applications;packages\quick_led-latest\inc;..\..\..\components\drivers\include;..\..\..\include;..\libraries\HAL_Drivers\drivers\drv_flash</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -443,6 +443,58 @@
               <FileName>cwchar.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\components\libc\compilers\common\cwchar.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>crclib</GroupName>
+          <Files>
+            <File>
+              <FileName>crc32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc32.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc16.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc16.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc16_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc16_ex.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc32_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc32_ex.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc16_ex_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc16_ex_sample.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc8.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc8.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc8_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc8_ex.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -714,9 +766,9 @@
           <GroupName>Fal</GroupName>
           <Files>
             <File>
-              <FileName>fal_rtt.c</FileName>
+              <FileName>fal_partition.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\components\fal\src\fal_rtt.c</FilePath>
+              <FilePath>..\..\..\components\fal\src\fal_partition.c</FilePath>
             </File>
           </Files>
           <Files>
@@ -728,47 +780,16 @@
           </Files>
           <Files>
             <File>
+              <FileName>fal_rtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\fal\src\fal_rtt.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
               <FileName>fal_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\components\fal\src\fal_flash.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>fal_partition.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\components\fal\src\fal_partition.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Finsh</GroupName>
-          <Files>
-            <File>
-              <FileName>shell.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\components\finsh\shell.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>msh.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\components\finsh\msh.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>msh_parse.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\components\finsh\msh_parse.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>cmd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\components\finsh\cmd.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1203,6 +1224,106 @@
               <FileName>stm32f1xx_hal_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>qboot</GroupName>
+          <Files>
+            <File>
+              <FileName>qboot_n32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_n32.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_quicklz.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_quicklz.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_fastlz.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_fastlz.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_aes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_aes.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_stm32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_stm32.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_at32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_at32.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_gzip.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_gzip.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_gd32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_gd32.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_hc32f460.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_hc32f460.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>quick_led</GroupName>
+          <Files>
+            <File>
+              <FileName>qled_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\quick_led-latest\src\qled_sample.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\quick_led-latest\src\qled.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>quicklz</GroupName>
+          <Files>
+            <File>
+              <FileName>quicklz.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\quicklz-v1.0.1\quicklz.c</FilePath>
             </File>
           </Files>
         </Group>

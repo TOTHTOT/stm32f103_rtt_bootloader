@@ -1,1 +1,22 @@
-[]
+[
+ {
+  "path": "/packages/system/qboot", 
+  "ver": "latest", 
+  "name": "QBOOT"
+ }, 
+ {
+  "path": "/packages/peripherals/quick_led", 
+  "ver": "latest", 
+  "name": "QLED"
+ }, 
+ {
+  "path": "/packages/misc/quicklz", 
+  "ver": "v1.0.1", 
+  "name": "QUICKLZ"
+ }, 
+ {
+  "path": "/packages/misc/crclib", 
+  "ver": "v1.02", 
+  "name": "CRCLIB"
+ }
+]
