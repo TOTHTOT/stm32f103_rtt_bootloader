@@ -1,30 +1,59 @@
-# CakePHP 3
+# Prerequisites
+*.d
 
-/vendor/*
-/config/app.php
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
 
-/tmp/cache/models/*
-!/tmp/cache/models/empty
-/tmp/cache/persistent/*
-!/tmp/cache/persistent/empty
-/tmp/cache/views/*
-!/tmp/cache/views/empty
-/tmp/sessions/*
-!/tmp/sessions/empty
-/tmp/tests/*
-!/tmp/tests/empty
+# Linker output
+*.ilk
+*.map
+*.exp
 
-/logs/*
-!/logs/empty
+# Precompiled Headers
+*.gch
+*.pch
 
-# CakePHP 2
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
 
-/app/tmp/*
-/app/Config/core.php
-/app/Config/database.php
-/vendors/*
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
 /Objects
+project.uvguix.RN
+JLinkLog.txt
 /board/CubeMX_Config/Drivers
 /board/CubeMX_Config/Inc
-/board/CubeMX_Config/Src
 /board/CubeMX_Config/MDK-ARM
+/board/CubeMX_Config/Src

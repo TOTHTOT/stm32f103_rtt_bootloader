@@ -17,10 +17,12 @@
 #endif /* RT_USING_NANO */
 
 /* defined the LED0 pin: PA1 */
-#define LED0_PIN    GET_PIN(B, 5)
+#define LED0_PIN    GET_PIN(A, 8)
+extern int fal_init(void);
 
 int main(void)
 {
+    fal_init();
     /* set LED0 pin mode to output */
     rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
 

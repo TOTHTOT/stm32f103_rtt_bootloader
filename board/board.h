@@ -1,4 +1,12 @@
 /*
+ * @Author: TOTHTOT 37585883+TOTHTOT@users.noreply.github.com
+ * @Date: 2025-01-13 09:01:06
+ * @LastEditors: TOTHTOT 37585883+TOTHTOT@users.noreply.github.com
+ * @LastEditTime: 2025-01-22 15:32:44
+ * @FilePath: \stm32f103_rtt_bootloader\board\board.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+/*
  * Copyright (c) 2006-2021, RT-Thread Development Team
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -18,11 +26,11 @@ extern "C" {
 #endif
 
 #define STM32_FLASH_START_ADRESS     ((uint32_t)0x08000000)
-#define STM32_FLASH_SIZE             (512 * 1024)
+#define STM32_FLASH_SIZE             (256 * 1024)
 #define STM32_FLASH_END_ADDRESS      ((uint32_t)(STM32_FLASH_START_ADRESS + STM32_FLASH_SIZE))
 
 /* Internal SRAM memory size[Kbytes] <8-64>, Default: 64*/
-#define STM32_SRAM_SIZE      64
+#define STM32_SRAM_SIZE      48
 #define STM32_SRAM_END       (0x20000000 + STM32_SRAM_SIZE * 1024)
 
 #if defined(__ARMCC_VERSION)
