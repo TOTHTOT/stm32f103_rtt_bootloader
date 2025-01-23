@@ -27,7 +27,6 @@
 
 /* Memory Management */
 
-#define RT_USING_MEMPOOL
 #define RT_USING_SMALL_MEM
 #define RT_USING_SMALL_MEM_AS_HEAP
 #define RT_USING_HEAP
@@ -53,8 +52,7 @@
 /* DFS: device virtual file system */
 
 #define RT_USING_FAL
-#define FAL_DEBUG_CONFIG
-#define FAL_DEBUG 1
+#define FAL_DEBUG 0
 #define FAL_PART_HAS_TABLE_CFG
 
 /* Device Drivers */
@@ -63,7 +61,6 @@
 #define RT_UNAMED_PIPE_NUMBER 64
 #define RT_USING_SERIAL
 #define RT_USING_SERIAL_V1
-#define RT_SERIAL_USING_DMA
 #define RT_SERIAL_RB_BUFSZ 64
 #define RT_USING_PIN
 
@@ -76,10 +73,6 @@
 
 /* Timezone and Daylight Saving Time */
 
-#define RT_LIBC_USING_LIGHT_TZ_DST
-#define RT_LIBC_TZ_DEFAULT_HOUR 8
-#define RT_LIBC_TZ_DEFAULT_MIN 0
-#define RT_LIBC_TZ_DEFAULT_SEC 0
 
 /* POSIX (Portable Operating System Interface) layer */
 
@@ -167,9 +160,6 @@
 #define QBOOT_DOWNLOAD_PART_NAME "download"
 #define QBOOT_FACTORY_PART_NAME "factory"
 #define QBOOT_USING_QUICKLZ
-#define QBOOT_USING_STATUS_LED
-#define QBOOT_STATUS_LED_PIN 8
-#define QBOOT_STATUS_LED_LEVEL 0
 #define QBOOT_THREAD_STACK_SIZE 4096
 #define QBOOT_THREAD_PRIO 5
 #define PKG_USING_QBOOT_LATEST_VERSION

@@ -450,6 +450,27 @@
           <GroupName>crclib</GroupName>
           <Files>
             <File>
+              <FileName>crc8.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc8.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc16_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc16_ex.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>crc8_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\crclib-v1.02\src\crc8_ex.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
               <FileName>crc32.c</FileName>
               <FileType>1</FileType>
               <FilePath>packages\crclib-v1.02\src\crc32.c</FilePath>
@@ -464,13 +485,6 @@
           </Files>
           <Files>
             <File>
-              <FileName>crc16_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>packages\crclib-v1.02\src\crc16_ex.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
               <FileName>crc32_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>packages\crclib-v1.02\src\crc32_ex.c</FilePath>
@@ -481,20 +495,6 @@
               <FileName>crc16_ex_sample.c</FileName>
               <FileType>1</FileType>
               <FilePath>packages\crclib-v1.02\src\crc16_ex_sample.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>crc8.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>packages\crclib-v1.02\src\crc8.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>crc8_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>packages\crclib-v1.02\src\crc8_ex.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -766,16 +766,16 @@
           <GroupName>Fal</GroupName>
           <Files>
             <File>
-              <FileName>fal_partition.c</FileName>
+              <FileName>fal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\components\fal\src\fal_partition.c</FilePath>
+              <FilePath>..\..\..\components\fal\src\fal.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>fal.c</FileName>
+              <FileName>fal_partition.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\components\fal\src\fal.c</FilePath>
+              <FilePath>..\..\..\components\fal\src\fal_partition.c</FilePath>
             </File>
           </Files>
           <Files>
@@ -952,25 +952,6 @@
               <FileName>mem.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\src\mem.c</FilePath>
-              <FileOption>
-                <FileArmAds>
-                  <Cads>
-                    <VariousControls>
-                      <MiscControls> </MiscControls>
-                      <Define>__RT_KERNEL_SOURCE__</Define>
-                      <Undefine> </Undefine>
-                      <IncludePath> </IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>mempool.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\mempool.c</FilePath>
               <FileOption>
                 <FileArmAds>
                   <Cads>
@@ -1231,37 +1212,16 @@
           <GroupName>qboot</GroupName>
           <Files>
             <File>
-              <FileName>qboot_n32.c</FileName>
+              <FileName>qboot_hc32f460.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\qboot-latest\src\qboot_n32.c</FilePath>
+              <FilePath>packages\qboot-latest\src\qboot_hc32f460.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>qboot_quicklz.c</FileName>
+              <FileName>qboot_gzip.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\qboot-latest\src\qboot_quicklz.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>qboot_fastlz.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>packages\qboot-latest\src\qboot_fastlz.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>qboot_aes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>packages\qboot-latest\src\qboot_aes.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>qboot.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>packages\qboot-latest\src\qboot.c</FilePath>
+              <FilePath>packages\qboot-latest\src\qboot_gzip.c</FilePath>
             </File>
           </Files>
           <Files>
@@ -1280,9 +1240,30 @@
           </Files>
           <Files>
             <File>
-              <FileName>qboot_gzip.c</FileName>
+              <FileName>qboot_aes.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\qboot-latest\src\qboot_gzip.c</FilePath>
+              <FilePath>packages\qboot-latest\src\qboot_aes.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_fastlz.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_fastlz.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_quicklz.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_quicklz.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>qboot_n32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\qboot-latest\src\qboot_n32.c</FilePath>
             </File>
           </Files>
           <Files>
@@ -1294,9 +1275,9 @@
           </Files>
           <Files>
             <File>
-              <FileName>qboot_hc32f460.c</FileName>
+              <FileName>qboot.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\qboot-latest\src\qboot_hc32f460.c</FilePath>
+              <FilePath>packages\qboot-latest\src\qboot.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1304,16 +1285,16 @@
           <GroupName>quick_led</GroupName>
           <Files>
             <File>
-              <FileName>qled_sample.c</FileName>
+              <FileName>qled.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\quick_led-latest\src\qled_sample.c</FilePath>
+              <FilePath>packages\quick_led-latest\src\qled.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>qled.c</FileName>
+              <FileName>qled_sample.c</FileName>
               <FileType>1</FileType>
-              <FilePath>packages\quick_led-latest\src\qled.c</FilePath>
+              <FilePath>packages\quick_led-latest\src\qled_sample.c</FilePath>
             </File>
           </Files>
         </Group>
